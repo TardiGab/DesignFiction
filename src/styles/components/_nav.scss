@@ -1,0 +1,68 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+@import '../components/type';
+
+
+.nav {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  border-radius: 50px;
+  backdrop-filter: blur(25px);
+  padding: 1rem 1rem 1rem 1.5rem;
+  border: $border solid transparent;
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   background: $blue-gradient;
+  //   margin: -$border;
+  //   border-radius: inherit;
+  //   z-index: -1;
+  // }
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  &__logo {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: $text-color;
+    text-decoration: none;
+    letter-spacing: -1.2px; 
+  }
+  &__ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1rem;
+  }
+  &__el {
+    a {
+      @include nav-links(15px, .7);
+    }
+  }
+  &__cta {
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    @include nav-links(15px, 1);
+    background: radial-gradient(50% 35.71% at 50% 100%, #3F3CA0 0%, transparent 100%);
+    background-color: $blue;
+    transition: all .5s ease;
+    &:hover {
+      background-color: $dark-blue;
+      transition: all .5s ease;
+    }
+  }
+}

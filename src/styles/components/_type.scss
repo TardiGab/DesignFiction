@@ -1,10 +1,27 @@
-body {
-  font-family: sans-serif;
-  font-size: $size-text;
-  line-height: 1.5;
-  color: $c-text;
+@font-face {
+  font-family: 'Red Hat Display';
+  src: url(../../assets/fonts/RedHatDisplay-VariableFont_wght.ttf) format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
 
-.title {
-  color: $c-alt;
+@font-face {
+  font-family: 'Unbounded';
+  src: url(../../assets/fonts/Unbounded-VariableFont_wght.ttf) format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: clamp(1rem, 0.875rem + 0.4167vw, 1.25rem);
+}
+
+h1 {
+  font-size: clamp(4.1875rem, 2.7813rem + 4.6875vw, 7rem);
+  font-weight: 900;
+  line-height: .9;
+  margin: 0;
 }

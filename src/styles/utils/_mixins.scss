@@ -1,0 +1,10 @@
+@mixin nav-links($font-size: 15px, $opacity: .7) {
+  font-size: $font-size;
+  color: $text-color;
+  text-decoration: none;
+  opacity: $opacity;
+  transition: all .3s ease;
+  &:hover {
+    opacity: 1;
+  }
+}

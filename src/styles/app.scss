@@ -1,2 +1,23 @@
 @import 'utils/variables';
+
 @import 'components/type';
+@import 'components/nav';
+
+@import 'pages/home';
+
+::selection {
+  background: rgba($blue, 0.5);
+  color: $text-color;
+  opacity: 0.5;
+}
+
+h1::selection {
+  color: inherit; 
+  background-color: rgba($blue, 0.5);
+}
+
+body {
+  background-color: $bg-color;
+  color: $text-color;
+  margin: 0;
+}

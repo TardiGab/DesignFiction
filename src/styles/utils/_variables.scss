@@ -1,5 +1,15 @@
-$c-bg: #efefef;
-$c-alt: #e41612;
-$c-text: #444;
+// Couleurs
+$bg-color: #0D0F15;
+$text-color: #EAEDFF;
 
-$size-text: 18px;
+$green: #0A7B2A;
+$blue: #3F3CA0;
+$dark-blue: #17163A;
+$purple: #7F08BF; 
+
+$green-gradient: linear-gradient(180deg, rgba(10, 123, 42, 0.00) 0%, #0A7B2A 100%);
+$blue-gradient: linear-gradient(180deg, rgba(63, 60, 160, 0.00) 0%, #3F3CA0 100%);
+$purple-gradient: linear-gradient(180deg, rgba(127, 8, 191, 0.00) 0%, #7F08BF 100%);
+
+// Valeurs
+$border: 3px;
