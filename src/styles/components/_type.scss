@@ -25,3 +25,21 @@ h1 {
   line-height: .9;
   margin: 0;
 }
+
+h2 {
+  font-size: clamp(2.375rem, 1.5938rem + 2.6042vw, 3.9375rem);
+  font-weight: 900;
+  line-height: .9;
+}
+
+h3 {
+  font-size: clamp(1.75rem, 1.5rem + 0.8333vw, 2.25rem);
+  font-weight: 900;
+  line-height: .9;
+}
+
+p {
+  font-size: clamp(1rem, 0.875rem + 0.4167vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.5;
+}
