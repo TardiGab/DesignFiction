@@ -44,9 +44,21 @@
     display: flex;
     flex-direction: row;
     gap: 10rem;
+    align-items: center;
+    margin-bottom: 72px;
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      gap: 5rem;    
+    }
     @media screen and (max-width: 768px) {
       flex-direction: column;
       gap: 2rem;
+      margin-bottom: 40px;
+      &:nth-child(even) {
+        flex-direction: column;
+      }
     }
   }
   &__content {
@@ -62,12 +74,25 @@
     &::after {
       @include gradient-line($purple);
     }
+    &--blue {
+      &::after {
+        @include gradient-line($blue);
+      }
+    }
+    &--green {
+      &::after {
+        @include gradient-line($green);
+      }
+    }
   }
+  
   &__p {
     margin-top: 2.5rem;
     font-weight: 700;
   }
   &__ul {
+    padding: 0;
+    margin: 0;
     margin-top: 1.5rem;
     li {
       margin-bottom: .5rem;
@@ -76,6 +101,7 @@
   &__img {
     width: 100%;
     height: fit-content;
+    flex: 1;
     img {
       width: 100%;
       height: 100%;
@@ -84,3 +110,80 @@
     }
   }
 }
+
+.stats {
+  max-width: 100vw;
+  margin: 0 1rem;
+  &__items {
+    padding: 0;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 1rem;
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+    }
+    li {
+      padding: 32px 48px;
+      border-radius: 11.2px;
+      transition: all .3s ease;
+      background-color: $bg-color;
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% + .4rem);
+        height: calc(100% + .4rem);
+        border-radius: 15px;
+        background: $purple-gradient;
+        z-index: -1;
+      }
+      &:hover {
+        box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.2);
+        background-color: $purple;
+        box-shadow: 0px 0px 40px $purple;
+        &::after {
+          background-color: $purple;
+        }
+      }
+      &:nth-of-type(2) {
+        &::after {
+          background: $blue-gradient;
+        }
+        &:hover {
+          box-shadow: 0px 0px 40px $blue;
+          &::after {
+            background-color: $blue;
+          }
+        }
+      }
+      &:nth-of-type(3) {
+        &::after {
+          background: $green-gradient;
+        }
+        &:hover {
+          box-shadow: 0px 0px 40px $green;
+          &::after {
+            background-color: $green;
+          }
+        }
+      }
+    }
+  }
+  &__h3 {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+  &__p {
+    margin: 0;
+  }
+}
+  
+
+
+      
