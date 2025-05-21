@@ -1,0 +1,95 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+@import '../components/type';
+
+.footer {
+  background: radial-gradient(50% 20% at 50% 100%, $purple 0%, transparent 100%);
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  @media screen and (max-width: 768px) {
+    background: radial-gradient(50% 5% at 50% 100%, $purple 0%, transparent 100%);
+    min-height: 70vh;
+    margin: 0 1rem;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 90%;
+    height: 3px;
+    background: linear-gradient(90deg, $purple 0%, $blue 100%);
+    z-index: -1;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+  &__logo {
+    font-family: 'Unbounded', sans-serif;
+    font-size: clamp(2.375rem, 1.5938rem + 2.6042vw, 3.9375rem);
+    font-weight: 900;
+    color: $text-color;
+    text-decoration: none;
+    letter-spacing: -1.2px;
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 2rem 0;
+    width: 100%;
+    max-width: 80%;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      gap: 3rem;
+      max-width: 100%;
+    }
+  }
+  &__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+  }
+  &__h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;  
+  }
+  &__ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  &__li {
+    margin-bottom: .5rem;
+    a {
+      @include nav-links(15px, .7);
+    }
+  }
+  &__span {
+    font-size: 15px;
+    color: $text-color;
+    opacity: .7;
+    a {
+      @include nav-links(15px, 1);
+      transition: all .3s ease;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
