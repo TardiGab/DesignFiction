@@ -5,6 +5,9 @@
 @import 'components/footer';
 
 @import 'pages/home';
+@import 'pages/login';
+
+
 
 ::selection {
   background: rgba($blue, 0.5);
@@ -23,3 +26,8 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
+
+main {
+  min-height: 100vh;
+}
+

@@ -1,0 +1,138 @@
+@import '../utils/variables';
+
+@import '../components/type';
+
+button, input {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+input {
+  cursor: text;
+}
+
+.customerspace {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  gap: 20%;
+  min-height: 100vh;
+  width: 80%;
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 5%;
+    padding: 0 1rem;
+  }
+}
+
+.login, .contact {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  &__h1, &__h2 {
+    font-size: $h2-font-size;
+    font-weight: 700;
+    margin-top: 0;
+  }
+  &__button {
+    @include cta();
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 2rem;
+    gap: 3rem;
+  }
+  &__input-group {
+    display: flex;
+    position: relative;
+    width: 100%;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(100% + .4rem);
+      height: calc(100% + .4rem);
+      border-radius: 1rem;
+      background: $blue-gradient;
+      z-index: -1;
+    }
+  }
+  &__input {
+    position: relative;
+    background-color: $bg-color;
+    color: $text-color;
+    font-size: $p-font-size;
+    font-family: "Red Hat Display", sans-serif;
+    border: none;
+    border-radius: 13px;
+    padding: 1rem;
+    width: 100%;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 15px;
+      background: $purple-gradient;
+      z-index: -1;
+    }
+    option {
+      background-color: $bg-color;
+      color: $text-color;
+      font-size: $p-font-size;
+      padding: 1rem;
+      border-radius: 13px;
+      &:hover {
+        background-color: $blue;
+        color: $text-color;
+      }
+      &[value=""] {
+        display: none;
+      }
+    }
+  }
+  &__input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px $blue;
+  }
+  &__label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    font-size: $p-font-size;
+    color: $text-color;
+    transition: all .3s ease;
+    opacity: 0.5;
+    z-index: 1;
+    pointer-events: none;
+    @media (max-width: 768px) {
+      left: 0.5rem;
+    }
+    &--active {
+      top: 0;
+      left: 1rem;
+      transform: translateY(calc(-50% - 1rem)) translateX(-0.5rem);
+      font-size: $p-font-size;
+      color: $text-color;
+      opacity: 1;
+    }
+  }
+}

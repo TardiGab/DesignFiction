@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Noboss | Espace client</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="description" content="">
+  <!-- Meta Partage -->
+  <!-- Favicon -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="styles/app.css">
+
+  <script src="scripts/app.js" defer></script>
+</head>
+<body>
+  <!-- <header>
+    <nav class="nav">
+      <div class="nav__left">
+        <a href="index.html" class="nav__logo">Noboss</a>
+        <ul class="nav__ul">
+          <li class="nav__el"><a href="">Qui sommes-nous ?</a></li>
+          <li class="nav__el"><a href="espace-client.html">Espace client</a></li>
+        </ul>
+      </div>
+      <div class="nav__right">
+        <a href="" class="nav__cta">Commencez aujourd'hui</a>
+      </div>
+    </nav>
+  </header> -->
+  <main class="customerspace">
+    <section class="login">
+      <h1 class="login__h1">Bonjour, patron</h1>
+      <form class="login__form">
+        <div class="login__input-group">
+          <label for="email" class="login__label">Adresse e-mail</label>
+          <input type="email" id="email" class="login__input" required>
+        </div>
+        <div class="login__input-group">
+          <label for="password" class="login__label">Mot de passe</label>
+          <input type="password" id="password" class="login__input" required>
+        </div>
+        <span class="login__forgotten"><a href="#">Mot de passe oublié ?</a></span>
+        <button type="submit" class="login__button">Se connecter</button>
+      </form>
+    </section>
+    <section class="contact">
+      <h2 class="contact__h2">Vous avez des questions ?</h2>
+      <p class="contact__p">Afin que nous puissions personnaliser votre nouveau patron, nous avons besoin de diverses informations concernant votre entreprise</p>
+      <form class="contact__form">
+        <div class="contact__input-group">
+          <label for="name" class="contact__label">Nom de votre entreprise</label>
+          <input type="text" id="name" class="contact__input" required>
+        </div>
+        <div class="contact__input-group">
+          <label for="email" class="contact__label">Adresse e-mail</label>
+          <input type="email" id="email" class="contact__input" required>
+        </div>
+        <div class="contact__input-group">
+          <label for="email" class="contact__label">Secteur d'activité</label>
+          <input type="text" id="activity" class="contact__input" required>
+        </div>
+        <div class="contact__input-group">
+          <!-- <label for="size" class="contact__label">Taille de l'entreprise</label> -->
+          <select id="size" class="contact__input" required>
+            <option value="" disabled selected>Choisissez une option</option>
+            <option value="1-10">1-10 employés</option>
+            <option value="11-50">11-50 employés</option>
+            <option value="51-200">51-200 employés</option>
+            <option value="201+">201+ employés</option>
+          </select>
+        </div>
+        <button type="submit" class="contact__button">Envoyer</button>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__container">
+      <span class="footer__logo">Noboss</span>
+      <div class="footer__nav">
+        <section class="footer__section">
+          <h4 class="footer__h4">Suivez-nous</h4>
+          <ul class="footer__ul">
+            <li class="footer__li"><a href="#">LinkedIn</a></li>
+            <li class="footer__li"><a href="#">TikTok</a></li>
+            <li class="footer__li"><a href="#">YouTube</a></li>
+          </ul>
+        </section>
+        <section class="footer__section">
+          <h4 class="footer__h4">Aide</h4>
+          <ul class="footer__ul">
+            <li class="footer__li"><a href="#">FAQ</a></li>
+            <li class="footer__li"><a href="#">Contact</a></li>
+            <li class="footer__li"><a href="#">Assistance</a></li>
+          </ul>
+        </section>
+        <section class="footer__section">
+          <h4 class="footer__h4">Mentions légales</h4>
+          <ul class="footer__ul">
+            <li class="footer__li"><a href="#">Conditions générales d'utilisation</a></li>
+            <li class="footer__li"><a href="#">Conditions générales de vente</a></li>
+            <li class="footer__li"><a href="#">Politique de confidentialité</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <span class="footer__span">Créé avec amour par <a href="https://gabriel-manciu.be" target="_blank">Gabriel Manciu</a> - <a href="credits.html">Crédits</a></span>
+  </footer>
+</body>
+</html>

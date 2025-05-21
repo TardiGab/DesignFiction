@@ -7,9 +7,16 @@ $blue: #3F3CA0;
 $dark-blue: #17163A;
 $purple: #7F08BF; 
 
-$green-gradient: linear-gradient(180deg, rgba(10, 123, 42, 0.00) 0%, #0A7B2A 100%);
-$blue-gradient: linear-gradient(180deg, rgba(63, 60, 160, 0.00) 0%, #3F3CA0 100%);
-$purple-gradient: linear-gradient(180deg, rgba(127, 8, 191, 0.00) 0%, #7F08BF 100%);
+$green-gradient: linear-gradient(180deg, transparent 25%, $green 100%);
+$blue-gradient: linear-gradient(180deg, transparent 25%, $blue 100%);
+$purple-gradient: linear-gradient(180deg, transparent 25%, $purple 100%);
 
 // Valeurs
 $border: 3px;
+
+// Font sizes
+$h1-font-size: clamp(3.1875rem, 1.2813rem + 6.3542vw, 7rem);
+$h2-font-size: clamp(2.375rem, 1.5938rem + 2.6042vw, 3.9375rem);
+$h3-font-size: clamp(1.75rem, 1.5rem + 0.8333vw, 2.25rem);
+$h4-font-size: clamp(1rem, 0.875rem + 0.4167vw, 1.25rem);
+$p-font-size: clamp(1rem, 0.875rem + 0.4167vw, 1.25rem);
