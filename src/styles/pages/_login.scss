@@ -15,6 +15,11 @@ input {
   cursor: text;
 }
 
+// * {
+//   box-sizing: border-box;
+//   border: 1px solid red;
+// }
+
 .customerspace {
   display: flex;
   flex-direction: row;
@@ -22,13 +27,14 @@ input {
   justify-content: center;
   gap: 20%;
   min-height: 100vh;
-  width: 80%;
-  margin: 0 auto;
+  margin: 0;
   position: relative;
+  padding: 0 10%;
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 5%;
-    padding: 0 1rem;
+    gap: 4rem;
+    margin: 20% 0;
+    padding: 0 5%;
   }
   &::after {
     content: ''; 
@@ -39,6 +45,9 @@ input {
     width: 3px;
     height: 80%;
     background: linear-gradient(180deg, transparent 0%, $blue 100%);
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 }
 
@@ -47,6 +56,10 @@ input {
   flex-direction: column;
   width: 50%;
   margin: 10% 0;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin: 0;
+  }
   &__h1, &__h2 {
     font-size: $h2-font-size;
     font-weight: 700;
@@ -56,8 +69,6 @@ input {
   &__button {
     @include cta();
     font-size: $p-font-size;
-    margin-top: 2rem;
-    width: 100%;
     text-align: center;
   }
   &__form {
@@ -66,6 +77,9 @@ input {
     width: 100%;
     margin-top: 2rem;
     gap: 3rem;
+    @media (max-width: 768px) {
+      gap: 2rem;
+    }
   }
   &__input-group {
     display: flex;
