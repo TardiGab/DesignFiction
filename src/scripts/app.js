@@ -1,5 +1,12 @@
 "use strict";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import CSSRulePlugin from "gsap/CSSRulePlugin";
+
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, CSSRulePlugin);
+
 const loginInputs = document.querySelectorAll(".login__input");
 const contactInputs = document.querySelectorAll(".contact__input");
 
@@ -38,3 +45,48 @@ burger.addEventListener("click", function () {
   burger.classList.toggle("nav__burger--active");
   navBottom.classList.toggle("nav__bottom--active");
 });
+
+const hero = document.querySelector(".hero");
+if (hero) {
+  gsap.to(hero, {
+    scrollTrigger: {
+      trigger: hero,
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+      pin: true,
+      pinSpacing: false,
+    },
+    filter: "blur(50px)",
+    scale: 1.2,
+    opacity: 0,
+  })
+
+  gsap.from(".highlights__item", {
+    scrollTrigger: {
+      trigger: ".highlights",
+      start: "top center",
+      end: "bottom+=100 bottom",
+      scrub: true,
+    },
+    filter: "blur(10px)",
+    opacity: 0,
+    y: 100,
+    stagger: 1,
+    ease: "power1.out",
+    duration: 1,
+  })
+
+  gsap.from(".stats__items li", {
+    scrollTrigger: {
+      trigger: ".stats",
+      start: "top center",
+      end: "center center",
+      scrub: true,
+    },
+    opacity: 0,
+    stagger: 1,
+    ease: "power1.out",
+    duration: 1,
+  })
+}
