@@ -33,7 +33,7 @@ button {
   }
 
   &__mobile {
-    display: flex;
+    display: none;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
@@ -46,6 +46,9 @@ button {
     border-radius: 2rem;
     backdrop-filter: blur(25px);
     z-index: 1000;
+    @media screen and (max-width: 768px) {
+      display: flex;
+    }
   }
 
   &__burger {
