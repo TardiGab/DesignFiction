@@ -30,3 +30,11 @@ contactInputs.forEach(input => {
     }
   });
 });
+
+const burger = document.querySelector(".nav__burger");
+const navBottom = document.querySelector(".nav__bottom");
+
+burger.addEventListener("click", function () {
+  burger.classList.toggle("nav__burger--active");
+  navBottom.classList.toggle("nav__bottom--active");
+});

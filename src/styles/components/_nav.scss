@@ -3,45 +3,146 @@
 
 @import '../components/type';
 
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
 
 .nav {
-  position: fixed;
-  top: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: space-between;
-  width: 75%;
-  border-radius: 50px;
-  backdrop-filter: blur(25px);
-  padding: 1rem 1rem 1rem 1.5rem;
-  border: $border solid transparent;
-  z-index: 1000;
+  &__desktop {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    border-radius: 50px;
+    backdrop-filter: blur(25px);
+    padding: 1rem 1rem 1rem 1.5rem;
+    border: $border solid transparent;
+    z-index: 1000;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    position: fixed;
+    width: calc(90% - 3rem);
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2rem;
+    backdrop-filter: blur(25px);
+    z-index: 1000;
+  }
+
+  &__burger {
+    display: none;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+
+    @media screen and (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    &--active {
+      .nav__line {
+        position: absolute; 
+      }
+      .nav__line:first-child {
+        transform: rotate(45deg);
+      }
+      .nav__line:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__line {
+    width: 1rem;
+    height: 2px;
+    background-color: $text-color;
+    transition: all .3s ease;
+    transform-origin: center;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1rem;
+    overflow: hidden;
+    height: 0px;
+    transition: all .3s ease;
+
+    &--active {
+      height: 125px;
+    }
+  }
+
   &__left {
     display: flex;
     align-items: center;
     gap: 4rem;
   }
+
   &__logo {
     font-family: 'Unbounded', sans-serif;
     font-size: 20px;
     font-weight: 900;
     color: $text-color;
     text-decoration: none;
-    letter-spacing: -1.2px; 
+    letter-spacing: -1.2px;
   }
+
   &__ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
     gap: 2rem;
-  }
-  &__el {
-    a {
-      @include nav-links(15px, .7);
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      width: 100%;
+      align-items: flex-start;
+      gap: .5rem;
     }
   }
+
+  &__el {
+    a {
+      @include nav-links(1rem, .7);
+    }
+  }
+
   &__cta {
     @include cta();
   }

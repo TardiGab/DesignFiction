@@ -28,6 +28,7 @@
   background: radial-gradient(50% 35.71% at 50% 100%, #3F3CA0 0%, transparent 100%);
   background-color: $blue;
   transition: all .5s ease;
+  text-align: center;
   &:hover {
     background-color: $dark-blue;
     transition: all .5s ease;
