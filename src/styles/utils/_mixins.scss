@@ -34,3 +34,32 @@
     transition: all .5s ease;
   }
 }
+
+@mixin gradient-text($color1: $purple, $color2: $blue) {
+  background: linear-gradient(90deg, $color1 0%, $color2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin gradient-border($color1: $purple-gradient, $padding: 0.4rem, $color2: $purple) {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: calc(100% + $padding);
+    height: calc(100% + $padding);
+    background: $color1;
+    z-index: -1;
+    border-radius: 1rem;
+  }
+  &:hover {
+    background-color: $color2;
+    box-shadow: 0px 0px 40px $color2;
+    &::after {
+      background-color: $color2;
+    }
+  }
+}
