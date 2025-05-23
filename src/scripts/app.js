@@ -2,10 +2,8 @@
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
-import CSSRulePlugin from "gsap/CSSRulePlugin";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, CSSRulePlugin);
+gsap.registerPlugin(ScrollTrigger);
 
 const loginInputs = document.querySelectorAll(".login__input");
 const contactInputs = document.querySelectorAll(".contact__input");
@@ -48,20 +46,19 @@ burger.addEventListener("click", function () {
 
 const hero = document.querySelector(".hero");
 if (hero) {
-  // gsap.to(hero, {
-  //   scrollTrigger: {
-  //     trigger: hero,
-  //     start: "top top",
-  //     end: "bottom top",
-  //     scrub: true,
-  //     pin: true,
-  //     pinSpacing: false,
-  //     markers: true,
-  //   },
-  //   filter: "blur(50px)",
-  //   scale: 1.2,
-  //   opacity: 0,
-  // })
+  gsap.to(hero, {
+    scrollTrigger: {
+      trigger: hero,
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+      pin: true,
+      pinSpacing: false,
+    },
+    filter: "blur(50px)",
+    scale: 1.2,
+    opacity: 0,
+  })
 
   gsap.from(".highlights__item", {
     scrollTrigger: {
@@ -69,7 +66,6 @@ if (hero) {
       start: "top bottom",
       end: "bottom bottom",
       scrub: true,
-      markers: true,
     },
     filter: "blur(100px)",
     opacity: 0,
