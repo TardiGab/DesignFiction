@@ -46,6 +46,25 @@ burger.addEventListener("click", function () {
 
 const hero = document.querySelector(".hero");
 if (hero) {
+
+  window.addEventListener("load", function () {
+    const tl = gsap.timeline();
+    const nav = document.querySelector(".nav > div");
+
+    tl.from(hero, {
+      filter: "blur(50px)",
+      scale: 1.2,
+      opacity: 0,
+      duration: 1,
+      ease: "power1.out",
+    }).from(nav, {
+      opacity: 0,
+      filter: "blur(50px)",
+      duration: 0.8,
+      ease: "power1.out",
+    },"-=0.5")
+  });
+
   gsap.to(hero, {
     scrollTrigger: {
       trigger: hero,
