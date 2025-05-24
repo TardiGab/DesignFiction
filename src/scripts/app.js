@@ -46,7 +46,6 @@ burger.addEventListener("click", function () {
 
 const hero = document.querySelector(".hero");
 if (hero) {
-
   window.addEventListener("load", function () {
     const tl = gsap.timeline();
     const nav = document.querySelector(".nav > div");
@@ -63,6 +62,14 @@ if (hero) {
       duration: 0.8,
       ease: "power1.out",
     },"-=0.5")
+
+    tl.to(hero, {
+      repeat: -1,
+      yoyo: true,
+      "--color1": "rgb(20, 31, 50)",
+      duration: 3,
+      ease: "power1.inOut",
+    })
   });
 
   gsap.to(hero, {
@@ -93,17 +100,4 @@ if (hero) {
     ease: "power1.out",
     duration: 1,
   })
-
-  // gsap.from(".stats__items li", {
-  //   scrollTrigger: {
-  //     trigger: ".stats",
-  //     start: "top center",
-  //     end: "center center",
-  //     scrub: true,
-  //   },
-  //   opacity: 0,
-  //   stagger: 1,
-  //   ease: "power1.out",
-  //   duration: 1,
-  // })
 }
