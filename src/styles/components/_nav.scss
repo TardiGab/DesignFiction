@@ -142,7 +142,12 @@ button {
 
   &__el {
     a {
-      @include nav-links(1rem, .7);
+      @include nav-links(1rem, .5);
+    }
+    &--active {
+      a {
+        @include nav-links(1rem, 1);
+      }
     }
   }
 
