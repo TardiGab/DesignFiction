@@ -13,6 +13,8 @@ button {
 }
 
 .nav {
+  white-space: nowrap;
+
   &__desktop {
     position: fixed;
     top: 2rem;
@@ -20,12 +22,18 @@ button {
     transform: translateX(-50%);
     display: flex;
     justify-content: space-between;
+    gap: 2rem;
     width: 75%;
     border-radius: 50px;
     backdrop-filter: blur(25px);
     padding: 1rem 1rem 1rem 1.5rem;
     border: $border solid transparent;
     z-index: 1000;
+
+    // Tablet 
+    @media screen and (max-width: 1024px) {
+      width: 90%;
+    }
 
     @media screen and (max-width: 768px) {
       display: none;
@@ -46,6 +54,7 @@ button {
     border-radius: 2rem;
     backdrop-filter: blur(25px);
     z-index: 1000;
+
     @media screen and (max-width: 768px) {
       display: flex;
     }
@@ -69,11 +78,13 @@ button {
 
     &--active {
       .nav__line {
-        position: absolute; 
+        position: absolute;
       }
+
       .nav__line:first-child {
         transform: rotate(45deg);
       }
+
       .nav__line:last-child {
         transform: rotate(-45deg);
       }
@@ -114,6 +125,11 @@ button {
     display: flex;
     align-items: center;
     gap: 4rem;
+    // tablet 
+
+    @media screen and (max-width: 768px) {
+      gap: 1rem;
+    }
   }
 
   &__logo {
@@ -144,6 +160,7 @@ button {
     a {
       @include nav-links(1rem, .5);
     }
+
     &--active {
       a {
         @include nav-links(1rem, 1);
